@@ -14,7 +14,8 @@
         <figure class="logotipo">
           <img src="imagenes/invie.png" width="186" width="60" alt="logotipo de invie"/>
         </figure>
-        <nav class="menu">
+        <span class="burger-boton icon-menu" id="burger-boton"></span>
+        <nav class="menu active" id="menu">
           <ul>
             <li>
               <a href="index.html">home</a>
@@ -103,5 +104,12 @@
         </form>
       </div>
     </footer>
+    <script type="text/javascript">
+      var $BurgerBoton = document.getElementById('burger-boton');
+      var $menu =document.getElementById('menu');
+      $BurgerBoton.addEventListener('tochstart', funtion(){
+        $menu.classList.toggle('active')
+      });
+    </script>
   </body>
 </html>
