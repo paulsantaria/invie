@@ -1,3 +1,42 @@
+@font-face {
+  font-family: 'icomoon';
+  src:  url('../fonts/icomoon.eot?j79ny1');
+  src:  url('../fonts/icomoon.eot?j79ny1#iefix') format('embedded-opentype'),
+    url('../fonts/icomoon.ttf?j79ny1') format('truetype'),
+    url('../fonts/icomoon.woff?j79ny1') format('woff'),
+    url('../fonts/icomoon.svg?j79ny1#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icomoon' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-phone:before {
+  content: "\e942";
+}
+.icon-menu:before {
+  content: "\e9bd";
+}
+.icon-close:before {
+  content: "\ea0d";
+}
+.icon-mail:before {
+  content: "\ea85";
+}
+
 
 
 body {
@@ -60,7 +99,7 @@ body {
 
 .portada {
   background-image: url(../imagenes/background.png);
-background-size: cover;
+  background-size: cover;
   color: white;
   padding: 20px;
 
@@ -242,6 +281,24 @@ input:focus, textarea:focus {
   margin: 50px 0;
 }
 
+
+.burger-boton {
+  width: 40px;
+  height: 40px;
+  line-height: 40px;
+  border-radius: 50%;
+  background: #395667;
+  display: inline-block;
+  text-align: center;
+  cursor: pointer;
+  position: absolute;
+  left: 20px;
+  top: 20px;
+  z-index: 3;
+}
+
+
+
 @media screen and (max-width: 800px) {
   .titulo {
     font-size: 45px;
@@ -333,15 +390,36 @@ input:focus, textarea:focus {
     padding: 0;
   }
 }
-
 @media screen and (max-width:500px) {
+  .portada .contenedor {
+    position: static;
+  }
+  .menu {
+    background: rgba(255, 60, 88, .6);
+    position: absolute;
+    left: -100%;
+    top: 0;
+    z-index: 2;
+    bottom:  0;
+    right: 0;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    transition: .3s;
+  }
+  .menu.active {
+    left: 0;
+  }
+  .menu ul {
+    flex: 1;
+  }
   .menu li {
     display: block;
     margin: 0;
     padding: 8px 0;
     border-bottom: 1px solid white;
   }
-  ,menu li:before {
+  .menu li:before {
     display: none;
   }
   .menu li:first-child {
@@ -362,6 +440,4 @@ input:focus, textarea:focus {
   .title-b {
     font-size: 30px;
   }
-
-
 }

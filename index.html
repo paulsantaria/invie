@@ -7,6 +7,7 @@
 
     <link href="https://fonts.googleapis.com/css?family=Allerta" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1 user-scalable=no"/>
   </head>
   <body>
     <section id="portata" class="portada background ">
@@ -14,7 +15,8 @@
         <figure class="logotipo">
           <img src="imagenes/invie.png" width="186" width="60" alt="logotipo de invie"/>
         </figure>
-        <nav class="menu">
+        <span class="burger-boton icon-menu" id="burger-boton"></span>
+        <nav class="menu" id="menu">
           <ul>
             <li>
               <a href="index.html">home</a>
@@ -30,7 +32,7 @@
       </header>
       <div class="contenedor">
         <h1 class="titulo">GUITARRAS <span>INVI</span>SIBLES</h1>
-        <h3 class="title-a">se un Rockstar como Paul Santaria¡¡¡¡</h3>
+        <h3 class="title-a">se un Rockstar como Paul Santaria livia¡¡¡¡</h3>
         <button class="button" type="button" name="button">conoce mas</button>
       </div>
     </section>
@@ -103,5 +105,13 @@
         </form>
       </div>
     </footer>
+    <script type="text/javascript">
+      var $burgerBoton = document.getElementById('burger-boton');
+      var $menu =document.getElementById('menu');
+      $burgerBoton.addEventListener('touchstart', function(){
+        $menu.classList.toggle('active')
+      });
+    </script>
   </body>
+
 </html>
