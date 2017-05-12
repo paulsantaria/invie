@@ -99,7 +99,7 @@ body {
 
 .portada {
   background-image: url(../imagenes/background.png);
-background-size: cover;
+  background-size: cover;
   color: white;
   padding: 20px;
 
@@ -281,6 +281,7 @@ input:focus, textarea:focus {
   margin: 50px 0;
 }
 
+
 .burger-boton {
   width: 40px;
   height: 40px;
@@ -295,8 +296,6 @@ input:focus, textarea:focus {
   top: 20px;
   z-index: 3;
 }
-
-
 
 
 
@@ -420,7 +419,7 @@ input:focus, textarea:focus {
     padding: 8px 0;
     border-bottom: 1px solid white;
   }
-  ,menu li:before {
+  .menu li:before {
     display: none;
   }
   .menu li:first-child {

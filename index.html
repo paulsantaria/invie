@@ -7,6 +7,7 @@
 
     <link href="https://fonts.googleapis.com/css?family=Allerta" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1 user-scalable=no"/>
   </head>
   <body>
     <section id="portata" class="portada background ">
@@ -15,7 +16,7 @@
           <img src="imagenes/invie.png" width="186" width="60" alt="logotipo de invie"/>
         </figure>
         <span class="burger-boton icon-menu" id="burger-boton"></span>
-        <nav class="menu active" id="menu">
+        <nav class="menu" id="menu">
           <ul>
             <li>
               <a href="index.html">home</a>
@@ -105,11 +106,12 @@
       </div>
     </footer>
     <script type="text/javascript">
-      var $BurgerBoton = document.getElementById('burger-boton');
+      var $burgerBoton = document.getElementById('burger-boton');
       var $menu =document.getElementById('menu');
-      $BurgerBoton.addEventListener('tochstart', funtion(){
+      $burgerBoton.addEventListener('tochstart', function(){
         $menu.classList.toggle('active')
       });
     </script>
   </body>
+
 </html>
