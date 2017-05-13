@@ -38,8 +38,11 @@
     </section>
     <section id="guitarras" class="guitarras contenedor">
       <h2>nuestras guitarras</h2>
+      <div class="video-responsive-contenedor">
+        <iframe class="video-responsive-src" width="560" height="315" src="https://www.youtube.com/embed/L9VBpbnXhWk" frameborder="0" allowfullscreen></iframe>
+      </div>
       <article class="guitarra">
-        <img class="derecha" src="imagenes/invie-acustica.png" width="350" alt="invie acustica">
+        <img class="derecha" data-src="imagenes/invie-acustica.png" width="350" alt="invie acustica">
         <div class="contenedor-guitarra-a">
           <h3 class="title-b">invie acustica</h3>
           <ol>
@@ -50,7 +53,7 @@
         </div>
       </article>
       <article class="guitarra b">
-        <img class="izquierda" src="imagenes/invie-classic.png" alt="invie classic" width="350">
+        <img class="izquierda" data-src="imagenes/invie-classic.png" alt="invie classic" width="350">
         <div class="contenedor-guitarra-b">
           <h3 class="title-b">invie clasic</h3>
           <ol>
@@ -64,7 +67,7 @@
     <footer class="footer">
       <div class="contenedor">
         <div class="contacto">
-          <img src="imagenes/invie-white.png" alt="logo">
+          <img data-src="imagenes/invie-white.png" alt="logo">
           <a href="tel:+51934567960"><strong>telefono</strong><span>934567960</span></a>
           <a href="mailto:psantaria@hotmail.com"><strong>e-mail</strong><span>psantaria@hotmail.com</span></a>
         </div>
@@ -105,11 +108,32 @@
         </form>
       </div>
     </footer>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/blazy/1.8.2/blazy.min.js">
+
+    </script>
     <script type="text/javascript">
+      var consulta = window.matchMedia('(max-width: 500px)');
+      consulta.addListener(mediaQuery);
+
       var $burgerBoton = document.getElementById('burger-boton');
       var $menu =document.getElementById('menu');
-      $burgerBoton.addEventListener('touchstart', function(){
+      function toggleMenu(){
         $menu.classList.toggle('active')
+      };
+
+      function mediaQuery() {
+        if (consulta.matches) {
+          console.log('se cumple');
+          $burgerBoton.addEventListener ('touchstart', toggleMenu);
+        } else {
+          $burgerBoton.removeEventListener ('touchstart', toggleMenu);
+          console.log('no se cumple');
+        }
+      }
+      mediaQuery();
+
+      var bLazy = new Blazy({
+          selector: 'img'
       });
     </script>
   </body>
