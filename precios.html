@@ -5,13 +5,15 @@
     <link rel="stylesheet" href="css/invie.css">
     <link href="https://fonts.googleapis.com/css?family=Allerta" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1 user-scalable=no"/>
   </head>
   <body>
     <header id="header" class="header contenedor background">
       <figure class="logotipo">
         <img src="imagenes/invie.png" width="186" width="60" alt="logotipo de invie"/>
       </figure>
-      <nav class="menu">
+      <span class="burger-boton icon-menu" id="burger-boton"></span>
+      <nav class="menu" id="menu">
         <ul>
           <li>
             <a href="index.html">home</a>
@@ -33,6 +35,9 @@
               <th>modelos</th>
               <th>precios</th>
               <th>descripcion</th>
+              <th>modelos</th>
+              <th>precios</th>
+              <th>descripcion</th>
             </tr>
           </thead>
           <tbody>
@@ -40,13 +45,22 @@
               <td>invie clasic</td>
               <td>10000 pesos</td>
               <td>una gritarra</td>
-            </tr>
-            <tr>
               <td>invie clasic</td>
               <td>10000 pesos</td>
               <td>una gritarra</td>
             </tr>
             <tr>
+              <td>invie clasic</td>
+              <td>10000 pesos</td>
+              <td>una gritarra</td>
+              <td>invie clasic</td>
+              <td>10000 pesos</td>
+              <td>una gritarra</td>
+            </tr>
+            <tr>
+              <td>invie clasic</td>
+              <td>10000 pesos</td>
+              <td>una gritarra</td>
               <td>invie clasic</td>
               <td>10000 pesos</td>
               <td>una gritarra</td>
@@ -100,5 +114,32 @@
         </form>
       </div>
     </footer>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/blazy/1.8.2/blazy.min.js">
+    </script>
+    <script type="text/javascript">
+      var consulta = window.matchMedia('(max-width: 500px)');
+      consulta.addListener(mediaQuery);
+
+      var $burgerBoton = document.getElementById('burger-boton');
+      var $menu =document.getElementById('menu');
+      function toggleMenu(){
+        $menu.classList.toggle('active')
+      };
+
+      function mediaQuery() {
+        if (consulta.matches) {
+          console.log('se cumple');
+          $burgerBoton.addEventListener ('touchstart', toggleMenu);
+        } else {
+          $burgerBoton.removeEventListener ('touchstart', toggleMenu);
+          console.log('no se cumple');
+        }
+      }
+      mediaQuery();
+
+      var bLazy = new Blazy({
+          selector: 'img'
+      });
+    </script>
   </body>
 </html>
