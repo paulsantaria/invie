@@ -119,10 +119,10 @@
       function toggleMenu(){
         $menu.classList.toggle('active')
       };
-      function showmenu () {
+      function showmenu() {
         $menu.classList.add ('active')
       }
-      function hidemenu () {
+      function hidemenu() {
         $menu.classList.remove ('active')
       }
 
@@ -140,9 +140,9 @@
       var bLazy = new Blazy({
           selector: 'img'
       });
-      var $body = document.body ;
+      var $body = document.body;
 
-      var gestos = new Hammer(body);
+      var gestos = new Hammer($body);
         gestos.on('swipeleft',hidemenu);
         geston.on('swiperight',showmenu);
     </script>
