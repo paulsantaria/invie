@@ -109,7 +109,6 @@
       </div>
     </footer>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/blazy/1.8.2/blazy.min.js">
-
     </script>
     <script type="text/javascript">
       var consulta = window.matchMedia('(max-width: 500px)');
@@ -120,6 +119,12 @@
       function toggleMenu(){
         $menu.classList.toggle('active')
       };
+      function showmenu () {
+        $menu.classList.add ('active')
+      }
+      function hidemenu () {
+        $menu.classList.remove ('active')
+      }
 
       function mediaQuery() {
         if (consulta.matches) {
@@ -135,6 +140,11 @@
       var bLazy = new Blazy({
           selector: 'img'
       });
+      var $body = document.body ;
+
+      var gestos = new Hammer(body);
+        gestos.on('swipeleft',hidemenu);
+        geston.on('swiperight',showmenu);
     </script>
   </body>
 
