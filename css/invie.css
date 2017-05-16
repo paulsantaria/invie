@@ -295,8 +295,11 @@ input:focus, textarea:focus {
   left: 20px;
   top: 20px;
   z-index: 3;
+  display: none;
 }
+.videos {
 
+}
 
 
 @media screen and (max-width: 800px) {
@@ -344,6 +347,10 @@ input:focus, textarea:focus {
   .contenedor-guitarra-a {
     padding: 0;
   }
+  .video-demo-contenedor {
+    margin-bottom: 30px;
+  }
+
 }
 @media screen and (max-width: 767px) {
   .footer .contenedor {
@@ -397,11 +404,19 @@ input:focus, textarea:focus {
   .menu ul {
     padding: 0;
   }
+
 }
 @media screen and (max-width:500px) {
+  .portada .button, .formulario .button {
+  dis1play: block;
+}
+  .burger-boton {
+    display: block;
+  }
   .portada .contenedor {
     position: static;
   }
+
   .header {
     position: static;
   }
@@ -410,7 +425,7 @@ input:focus, textarea:focus {
   }
   .menu {
     background: rgba(255, 60, 88, .6);
-    position: absolute;
+    position: fixed;
     left: -100%;
     top: 0;
     z-index: 2;
@@ -451,11 +466,28 @@ input:focus, textarea:focus {
   .guitarra img {
     width: 200px;
   }
+  .video-demo {
+    margin: 0 10px;
+  }
   .title-b {
     font-size: 30px;
   }
+  .precios .header .logotipo {
+    margin: 50px 0;
+  }
 }
 
+.video-demo   {
+  max-width: 500px;
+  width: 100%;
+  margin: 0 auto;
+  border: 5px solid red;
+
+}
+.video-demo-contenedor{
+  display: flex;
+  justify-content: center;
+}
 .video-responsive-contenedor {
   position: relative;
   padding-top: 56.25%;
@@ -472,6 +504,6 @@ input:focus, textarea:focus {
 
 @media screen and (-webkit-min-device-pixel-ratio: 2) {
   .background {
-    background-image: url(../imagenes/background2x.png);
+    background-image: url('../imagenes/background2x.png');
   }
 }
